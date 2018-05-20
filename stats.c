@@ -25,32 +25,27 @@
 #include "stats.h"
 
 /* Size of the Data Set */
-#define SIZE (4)
+#define SIZE (40)
 
-unsigned char find_minimum(unsigned char *test);
+unsigned char find_minimum(unsigned char *test, int tamano);
 
 void main() {
 
-/*  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
+unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
 
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-*/
-
-
-
-  unsigned char test[4] = { 97, 98, 99, 100};
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here*/
   unsigned char minimo;
   char (*pos_tabla);
   pos_tabla = test;
-  minimo  = find_minimum(test);
-  printf("El mínimo del array es:%c\n",minimo);
+  minimo  = find_minimum(test,sizeof(test));
+  printf("El mínimo del array es:%u\n",(int)minimo);
 
 
 
@@ -67,17 +62,16 @@ find_mean(char *pos_tabla,int tamano, int mean){};
 
 find_maximum(char *pos_tabla,int tamano, int max){};
 
-unsigned char find_minimum(unsigned char *test)
+unsigned char find_minimum(unsigned char *test,int tamano)
 {
 	int i;
 	unsigned char min = 255;
-	for (i=0;i<SIZE;i++)
+	
+	for (i=0;i<tamano;i++)
 	{
-		printf("test[%i]:%c\n",i,test[i]);
 		if (min>test[i])
 		{
 			min=test[i];
-			printf("min:%c\n",min);
 		}
 	}
 	return min;
