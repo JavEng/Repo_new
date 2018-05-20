@@ -29,6 +29,18 @@
 
 unsigned char find_minimum(unsigned char *test, int tamano);
 
+print_statistics(char *pos_tabla);
+
+print_array(char *pos_tabla,int tamano);
+
+unsigned char find_median(unsigned char *test,int tamano);
+
+unsigned char find_mean(unsigned char *test,int tamano);
+
+unsigned char find_maximum(unsigned char *test,int tamano);
+
+sort_array(char *pos_tabla,int tamano){};
+
 void main() {
 
 unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -42,25 +54,24 @@ unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here*/
   unsigned char minimo;
-  char (*pos_tabla);
-  pos_tabla = test;
+  unsigned char maximum;
+  unsigned char mean;
+  unsigned char median;
+
+  //char (*pos_tabla);
+  //pos_tabla = test;
   minimo  = find_minimum(test,sizeof(test));
-  printf("El mínimo del array es:%u\n",(int)minimo);
+  maximum = find_maximum(test,sizeof(test));
+  mean =  find_mean(test,sizeof(test));
+  printf("El minimo del array es:%u\n",(int)minimo);
+  printf("El maximo del array es:%u\n",(int)maximum);
+  printf("La media del array es:%u\n",(int)mean);
+
 
 
 
 
 }
-
-print_statistics(char *pos_tabla){};
-
-print_array(char *pos_tabla,int tamano){};
-
-find_median(char *pos_tabla,int tamano,int media){};
-
-find_mean(char *pos_tabla,int tamano, int mean){};
-
-find_maximum(char *pos_tabla,int tamano, int max){};
 
 unsigned char find_minimum(unsigned char *test,int tamano)
 {
@@ -77,6 +88,31 @@ unsigned char find_minimum(unsigned char *test,int tamano)
 	return min;
 };
 
-sort_array(char *pos_tabla,int tamano){};
+unsigned char find_maximum(unsigned char *test, int tamano)
+{
+	int i;
+	int maximum = 0;
+	for (i=0;i<tamano;i++)
+	{
+		if (test[i]>maximum)
+		{
+			maximum = test[i];
+		}
+	}
+	return maximum;
+}
+
+unsigned char find_mean(unsigned char *test,int tamano)
+{
+	int i;
+	int mean = 0;
+	float sum = 0; 
+	for (i=0;i<tamano;i++)
+	{
+		sum = sum + test[i];
+	}
+	mean = sum/sizeof(test);
+	return mean;
+}
 
 /* Add other Implementation File Code Here */
