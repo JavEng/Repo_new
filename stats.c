@@ -29,27 +29,25 @@
 
 unsigned char find_minimum(unsigned char *test, int tamano);
 
-print_statistics(char *pos_tabla);
-
-print_array(char *pos_tabla,int tamano);
-
 unsigned char find_median(unsigned char *test,int tamano);
 
 unsigned char find_mean(unsigned char *test,int tamano);
 
 unsigned char find_maximum(unsigned char *test,int tamano);
 
-sort_array(char *pos_tabla,int tamano){};
+print_statistics(char *pos_tabla);
+
+void print_array(unsigned char *test,int tamano);
+
+void sort_array(unsigned char *test,int tamano);
 
 void main() {
 
 unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
-
-                              114, 88,   45,  76, 123,  87,  25,  23,
-                              200, 122, 150, 90,   92,  87, 177, 244,
-                              201,   6,  12,  60,   8,   2,   5,  67,
-                                7,  87, 250, 230,  99,   3, 100,  90};
-
+                             114, 88,   45,  76, 123,  87,  25,  23,
+                             200, 122, 150, 90,   92,  87, 177, 244,
+                             201,   6,  12,  60,   8,   2,   5,  67,
+                             7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here*/
@@ -63,13 +61,12 @@ unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
   minimo  = find_minimum(test,sizeof(test));
   maximum = find_maximum(test,sizeof(test));
   mean =  find_mean(test,sizeof(test));
+  median = find_median(test,sizeof(test));
   printf("El minimo del array es:%u\n",(int)minimo);
   printf("El maximo del array es:%u\n",(int)maximum);
-  printf("La media del array es:%u\n",(int)mean);
-
-
-
-
+  printf("La media del array es:%u\n",mean);
+  printf("La mediana del array es:%u\n",median);
+  sort_array(test,sizeof(test));
 
 }
 
@@ -86,12 +83,12 @@ unsigned char find_minimum(unsigned char *test,int tamano)
 		}
 	}
 	return min;
-};
+}
 
 unsigned char find_maximum(unsigned char *test, int tamano)
 {
 	int i;
-	int maximum = 0;
+	unsigned char maximum = 0;
 	for (i=0;i<tamano;i++)
 	{
 		if (test[i]>maximum)
@@ -105,14 +102,50 @@ unsigned char find_maximum(unsigned char *test, int tamano)
 unsigned char find_mean(unsigned char *test,int tamano)
 {
 	int i;
-	int mean = 0;
+	unsigned char mean = 0;
 	float sum = 0; 
 	for (i=0;i<tamano;i++)
 	{
 		sum = sum + test[i];
 	}
-	mean = sum/sizeof(test);
+	mean = sum/tamano;
 	return mean;
 }
 
-/* Add other Implementation File Code Here */
+unsigned char find_median(unsigned char *test,int tamano)
+{
+	int i;
+	unsigned char median = 0;
+	sort_array(test,tamano);
+	median = test[(tamano/2)-1];
+	return median;
+}
+
+void sort_array(unsigned char *test,int tamano)
+{
+	unsigned char aux = 0;
+	int i;
+	int j;
+	for (i=0;i<tamano;i++)
+	{
+		for(j=0;j<tamano;j++)
+		{
+			if (test[i]>test[j])
+			{
+				aux=test[i];
+				test[i]=test[j];
+				test[j]=aux;
+			}
+		}
+	}	
+}
+
+void print_array(unsigned char *test, int tamano)
+{
+	int i;
+	for(i=0;i<tamano;i++)
+	{
+		printf("Test[%u]:%u\n",i,(int)test[i]);
+	}
+
+}
