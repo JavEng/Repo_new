@@ -149,8 +149,8 @@ void print_statistics(unsigned char *test,int tamano)
   	maximum = find_maximum(test,tamano);
   	mean =  find_mean(test,tamano);
   	median = find_median(test,tamano);
-  	printf("El minimo del array es:%u\n",(int)minimo);
-  	printf("El maximo del array es:%u\n",(int)maximum);
-  	printf("La media del array es:%u\n",mean);
-  	printf("La mediana del array es:%u\n",median);
+  	printf("The minimum array value is:%u\n",(int)minimo);
+  	printf("The maximum array value is:%u\n",(int)maximum);
+  	printf("The mean array value is:%u\n",mean);
+  	printf("The median array value is:%u\n",median);
 }

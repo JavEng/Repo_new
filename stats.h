@@ -24,100 +24,105 @@
 /* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief  A function that fins the minimum value of
+ * an array.
  *
- * <Add Extended Description Here>
+ * This function takes as an input an unsigned char 
+ * pointer to an nelement data array and compare every position,in order to find the minimum
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @return min an unsigned char that contains the minimum value
  */
 
-
+unsigned char find_minimum(unsigned char *test, int tamano);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief  A function that fins the median value of
+ * an array.
  *
- * <Add Extended Description Here>
+ * This function takes as an input an unsigned char 
+ * pointer to an n-element data array and compare every position,in order to find the median
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @return median an unsigned char that contains the median value
  */
 
+unsigned char find_median(unsigned char *test,int tamano);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief  A function that fins the mean value of
+ * an array.
  *
- * <Add Extended Description Here>
+ * This function takes as an input an unsigned char 
+ * pointer to an nelement data array and compare every position,in order to find the mean
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @return mean an unsigned char that contains the mean value
  */
 
+unsigned char find_mean(unsigned char *test,int tamano);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief  A function that fins the maximum value of
+ * an array.
  *
- * <Add Extended Description Here>
+ * This function takes as an input an unsigned char 
+ * pointer to an nelement data array and compare every position,in order to find the maximum
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * @return maximum an unsigned char that contains the maximum value
  */
 
-
-/**
- * @brief <Add Brief Description of Function Here>
- *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
- */
+unsigned char find_maximum(unsigned char *test,int tamano);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief  A function that prints the statistics of
+ * an array including minimum, maximum, mean, and median.
  *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * This function takes as an input an unsigned char 
+ * pointer to an nelement data array. The function calls to
+ * find_minimum,find_maximum,find_mean,find_median and prints 
+ * what this funstions are returning
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
  */
 
+void print_statistics(unsigned char *test,int tamano);
+
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief  A function that prints the 
+ * an array.
  *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * This function takes as an input an unsigned char 
+ * pointer to an nelement data array and print it.
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
  */
+
+void print_array(unsigned char *test,int tamano);
+
+/**
+ * @brief  A function that sorts the array from the largest to smallest value.
+ *
+ * This function takes as an input an unsigned char 
+ * pointer to an nelement data array.
+
+ * @param unsigned char *test which contains the info to be treated.
+ * @param int tamano specifies the size of the char array
+ */
+
+void sort_array(unsigned char *test,int tamano);
+
 
 
 #endif /* __STATS_H__ */
