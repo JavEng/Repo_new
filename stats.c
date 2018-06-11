@@ -55,6 +55,7 @@ unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
   unsigned char maximum;
   unsigned char mean;
   unsigned char median;
+
   print_statistics(test,sizeof(test));
 
 }
@@ -153,4 +154,5 @@ void print_statistics(unsigned char *test,int tamano)
   	printf("The maximum array value is:%u\n",(int)maximum);
   	printf("The mean array value is:%u\n",mean);
   	printf("The median array value is:%u\n",median);
+  	print_array(test,tamano);
 }
